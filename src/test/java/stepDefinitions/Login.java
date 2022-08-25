@@ -12,7 +12,6 @@ public class Login extends BaseClass {
 	public void user_launch_browser_and_open_url() throws Throwable {
 	    BaseClass.launchApp();
 	    Thread.sleep(2000);
-	   
 	}
 
 	@When("^user click on LoginIn button$")
