@@ -4,20 +4,22 @@ package stepDefinitions;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseClass {
 	public static WebDriver driver;
 	public static Properties prop;
-	
+	public static WebDriverWait wait;
 
 	public BaseClass() {
 		try {
@@ -53,5 +55,19 @@ public class BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),
 				TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
+	}
+
+	public static void isChecked(List<WebElement> buttons) throws Throwable {
+		boolean checked = false;
+		List<WebElement> button = buttons;
+		for (WebElement radioButton : button) {
+			checked = radioButton.isSelected();
+			if (!checked) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView(true)", radioButton);
+				radioButton.click();
+				Thread.sleep(500);
+			}
+		}
 	}
 }
