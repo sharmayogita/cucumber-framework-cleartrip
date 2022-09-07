@@ -57,17 +57,4 @@ public class BaseClass {
 		driver.get(prop.getProperty("url"));
 	}
 
-	public static void isChecked(List<WebElement> buttons) throws Throwable {
-		boolean checked = false;
-		List<WebElement> button = buttons;
-		for (WebElement radioButton : button) {
-			checked = radioButton.isSelected();
-			if (!checked) {
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].scrollIntoView(true)", radioButton);
-				radioButton.click();
-				Thread.sleep(500);
-			}
-		}
-	}
 }
