@@ -11,8 +11,8 @@ Feature: Top Offers for International Flights
     Then User Select available Offer
     When User click on Book Now option
     Then User see Search Flights Page
-    When User search flight from source to destination
-    Then User booking flight
-    Then User enter Coupen code and click continue button
+    #When User search flight from source to destination
+    #Then User booking flight
+    #Then User enter Coupen code and click continue button
 
   
