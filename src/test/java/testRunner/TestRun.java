@@ -5,11 +5,12 @@ import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
-
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = {"Features/Hotels.feature"},
+	//	features = {"Features/hotelsTopOffers.feature"},
+	//	features = {"Features/internationalFlightsTopOffers.feature"},
+		//features= {"Features/login.feature"},
 		glue={"stepDefinitions"},
 		dryRun=false,
 		monochrome = true, //display the console output in a proper readable format
@@ -20,3 +21,4 @@ import cucumber.api.junit.Cucumber;
 public class TestRun {
 	
 }
+
