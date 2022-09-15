@@ -1,11 +1,11 @@
+@tag
 Feature: Top offers for hotels
   I want to use this template for check top offers for hotels
 
- 
+  @tag1
   Scenario: Check top offers for hotels 
-    Given I open browser 
-    When I click on Top offers
-    Then I click on Hotels
+    Given I open browser with url"https://www.cleartrip.com/offers/india"
+    When I click on Hotels
     Then I should see hotel offer page
     When  I click any offer
     Then I should see particular offer page
@@ -17,6 +17,7 @@ Feature: Top offers for hotels
     When I click select room 
     When i click book 
     Then I should see contine to booking page
+   
    
    
  

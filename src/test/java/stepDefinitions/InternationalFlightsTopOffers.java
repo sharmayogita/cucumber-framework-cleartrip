@@ -23,7 +23,8 @@ import pageObjects.InternationalFlightsOfferPage;
 
 public class InternationalFlightsTopOffers {
 	private BaseClass baseclass;
-	public InternationalFlightsOfferPage internationalflightpage;
+	// public static WebDriver driver;
+	public static InternationalFlightsOfferPage internationalflightpage;
 	public static Properties prop;
 
 	public InternationalFlightsTopOffers(BaseClass baseclass) {
@@ -44,13 +45,7 @@ public class InternationalFlightsTopOffers {
 	public void user_Opens_browser() throws Throwable {
 		WebDriver driver = baseclass.getDriver();
 		internationalflightpage = new InternationalFlightsOfferPage(driver);
-		Thread.sleep(2000);
-		if (driver.getPageSource().toLowerCase().contains(prop.getProperty("loginpageTitle"))) {
-			internationalflightpage.clickOnLoginPopupAvailable();
-
-		} else {
-			driver.getPageSource().contains(prop.getProperty("searchFlightTitle"));
-		}
+		internationalflightpage.clickOnLoginPopupAvailable();
 	}
 
 	@When("^User click on Top offers$")
@@ -102,7 +97,7 @@ public class InternationalFlightsTopOffers {
 
 	@Then("^User see Search Flights Page$")
 	public void user_see_Search_Flights_Page() throws Throwable {
-		WebDriver driver = baseclass.getDriver();
+	WebDriver driver = baseclass.getDriver();
 		Set<String> windowshandle = driver.getWindowHandles();
 		System.out.println(windowshandle);
 		List<String> windowHandleList = new ArrayList<String>(windowshandle);
