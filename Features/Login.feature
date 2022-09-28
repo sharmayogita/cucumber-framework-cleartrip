@@ -10,5 +10,5 @@ Feature: Validate Login Functionality
     When user enter username as "sharmayogita166@gmail.com"
     When User enter password as "123@Kamlesh"
     And user click on login button
-    Then page title should be "Sign up / Log in"
+    #Then page title should be "Sign up / Log in"
    

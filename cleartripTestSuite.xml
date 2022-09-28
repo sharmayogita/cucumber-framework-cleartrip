@@ -1,0 +1,48 @@
+<suite name="Launch Cleartrip.com">
+
+	<!-- <test name="Login Module">
+		<classes>
+			<class name="testRunner.LoginTestRun"></class>
+		</classes>
+	</test> -->
+
+	<test name="International FLights Top Offers">
+		<classes>
+			<class name="testRunner.InternationalFlightsTopOffersTestRun"></class>
+		</classes>
+	</test>
+
+	<test name="Hotel Offers">
+		<classes>
+			<class name="testRunner.HotelsTopOffersTestRun"></class>
+		</classes>
+	</test>
+
+	<test name="Domestic Flights Offers">
+		<classes>
+			<class name="testRunner.DomesticFlightsOfferTestRun"></class>
+		</classes>
+	</test>
+
+	<test name="Offers From Mobile">
+		<classes>
+			<class name="testRunner.SelectCouponFromMobileTestRun"></class>
+		</classes>
+	</test>
+
+
+	<test name="Flights Library">
+		<classes>
+			<class name="testRunner.FlightsLibraryTestRun"></class>
+		</classes>
+	</test>
+
+	<test name="Hotels Library">
+		<classes>
+			<class name="testRunner.HotelsLibraryTestRun"></class>
+		</classes>
+	</test>
+
+
+
+</suite>

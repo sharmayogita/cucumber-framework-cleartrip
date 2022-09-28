@@ -76,8 +76,7 @@ public class BaseClass {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("implicitWait")), TimeUnit.SECONDS);
 		// PageLoad TimeOuts
-		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),
-				TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 	}
 
@@ -98,7 +97,7 @@ public class BaseClass {
 			File destPath = new File("./Screenshots/" + screenSubFolderName + "/" + screenshotName + ".png");
 			try {
 				FileUtils.copyFile(sourcePath, destPath);
-				// Reporter.addScreenCaptureFromPath(destPath.toString());
+				 Reporter.addScreenCaptureFromPath(destPath.toString());
 			} catch (WebDriverException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

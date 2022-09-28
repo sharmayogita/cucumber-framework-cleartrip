@@ -30,13 +30,16 @@ public class DomesticFlightsOfferPages {
 	@FindBy(xpath = "//*[@id=\"IconNavList\"]/li[1]/a")
 	WebElement clickondomesticflights;
 
-	@FindBy(xpath = "//*[@id=\"block-system-main\"]/div/div[1]/div[2]/div[5]/span/a")
+	@FindBy(xpath = "//a[@href='/offers/india/domair-ctdom']//img[@class='image-style-deal-image']")
+	//@FindBy(xpath="//body/div[@id='page']/div[@id='columns']/div[@id='content-column']/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[5]/span[1]/a[1]")
 	WebElement  clickknowmoreoption;
 
-	@FindBy(xpath = "//div/div[1]/div/div/table[1]/tbody")
+	//@FindBy(xpath = "//div/div[1]/div/div/table[1]/tbody")
+	@FindBy(xpath="//td[@class='rtecenter']//span//span//span[contains(text(),'CTDOM')]")
 	WebElement copycouponcode;
 
-	@FindBy(xpath = "//*[@id=\\\"node-4747\\\"]/div/div[1]/div/div/p[7]/a")
+	//@FindBy(xpath = "//*[@id=\"node-4747\"]/div/div[1]/div/div/p[7]/a/img")
+	@FindBy(xpath="//a[@href='//cleartrip.com/']//img")
 	WebElement ClickonBookknow;
 
 		
@@ -60,8 +63,9 @@ public class DomesticFlightsOfferPages {
 	 public void clickknowmoreoption() {
 	 clickknowmoreoption.click();
 	 }
-	 public void copycouponcode() {
-	 copycouponcode.getText();
+	 public String copycouponcode() {
+	 String coupencode = copycouponcode.getText();
+	 return coupencode;
 	 }
 	 public void ClickonBookknow() {
 	 ClickonBookknow.click();
